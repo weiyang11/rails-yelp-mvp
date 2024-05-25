@@ -5,7 +5,7 @@
 
 <ul>
 <% @restaurants.each do |restaurant| %>
-<li><%= restaurant.name%> <%= restaurant.address%> <%= restaurant.category%> <%= restaurant.phone_number%>
+<li><%= link_to restaurant.name, restaurant_path(restaurant)%> <%= restaurant.address%> <%= restaurant.category%> <%= restaurant.phone_number%>(<%= restaurant.reviews.count %>)
 </li>
 <% end %>
 </ul>

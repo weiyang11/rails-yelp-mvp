@@ -6,6 +6,15 @@
 <li><%=@restaurant.phone_number  %></li>
 </ul>
 
+<h2>Review</h2>
+<ol>
+<% @restaurant.reviews.each do |review| %>
+<li> <%= review.content %>
+ <%= '⭐' * review.rating %>  </li>
+<% end %>
+</ol>
+
+<%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
 
 <nav>
 <%= link_to "Back", restaurants_path %>
